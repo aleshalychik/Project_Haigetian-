@@ -1,16 +1,15 @@
-# Дано вещественное число A и целое число N (>0). Найти A в степени N: AN = AA ... •A (числа A перемножаются N раз).
-print("Задание 1: Возведение в степень")
-try:
-    A = float(input("Введите число A: "))
-    N = int(input("Введите степень N (N > 0): "))
-    
-    if N <= 0:
-        print("Ошибка: N должно быть больше 0")
-    else:
-        result = 1
-        for i in range(N):
-            result = result * A
-        print(f"Результат: {result}")
+#В матрицу найти среднее арифметическое элементов последних двух столбцов
+
+import random
+
+rows = int(input())
+cols = int(input())
+matrix = [[random.randint(1, 10) for _ in range(cols)] for _ in range(rows)]
+items = [val for row in matrix for val in row[-2:]]
+
+avg = sum(items) / len(items)
+print("матрица:")
+for row in matrix: 
+  print(row)
         
-except ValueError:
-    print("Ошибка ввода!")
+print(f"Среднее последних двух столбцов: {avg}")
